@@ -40,6 +40,6 @@ struct CustomPersonView: View {
 
 struct CustomPersonView_Previews: PreviewProvider {
     static var previews: some View {
-        CustomPersonView(person: Person(name: "Goncalves Alexandre", age: 24))
+        CustomPersonView(person: Person(name: "Goncalves Alexandre", age: 27))
     }
 }

@@ -32,7 +32,7 @@ class NavigationRouter: ObservableObject {
         }
     }
 
-    func addToPath<T: Hashable>(path: T) {
+    func addToPath(path: some Hashable) {
         navigationPath.append(path)
     }
 
