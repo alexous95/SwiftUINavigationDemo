@@ -63,7 +63,6 @@ struct ContentView: View {
                     }
                     .sheet(isPresented: $showingPeopleSheet){
                         AddPeopleView(personViewModel: personViewModel)
-                            .environmentObject(navigationRouter)
                     }
 
                 }
@@ -75,10 +74,10 @@ struct ContentView: View {
 
                 case .person(let person):
                     navigationRouter.displayDetailPersonView(person: person)
-                        .environmentObject(navigationRouter)
                 }
             }
         }
+        .environmentObject(navigationRouter)
     }
 }
 
