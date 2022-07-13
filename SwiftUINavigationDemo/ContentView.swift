@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct ContentView: View {
+enum Destination: Hashable {
+    case article(Article)
+    case person(Person)
+}
 
-    enum Destination: Hashable {
-        case article(Article)
-        case person(Person)
-    }
+struct ContentView: View {
 
     @State private var showingPeopleSheet = false
     @StateObject private var personViewModel = PersonViewModel()

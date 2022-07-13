@@ -24,6 +24,10 @@ struct AddPeopleView: View {
 
             Button("Add") {
                 personViewModel.addPerson(name: newName, age: Int(newAge) ?? 0)
+
+                let person = Person(name: newName, age: Int(newAge) ?? 0)
+                // On ajoute a la main la vue que l'on veut dans le path
+                navigationRouter.addToPath(path: Destination.person(person))
                 dismiss.callAsFunction()
             }
         }
