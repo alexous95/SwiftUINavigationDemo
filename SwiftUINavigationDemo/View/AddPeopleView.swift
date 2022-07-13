@@ -10,6 +10,7 @@ import SwiftUI
 struct AddPeopleView: View {
     @State private var newName: String = ""
     @State private var newAge: String = ""
+    @State private var newAdress: String = ""
 
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var navigationRouter: NavigationRouter
@@ -21,11 +22,13 @@ struct AddPeopleView: View {
                 .textFieldStyle(.roundedBorder)
             TextField("Age", text: $newAge)
                 .textFieldStyle(.roundedBorder)
+            TextField("Adress", text: $newAdress)
+                .textFieldStyle(.roundedBorder)
 
             Button("Add") {
-                personViewModel.addPerson(name: newName, age: Int(newAge) ?? 0)
+                personViewModel.addPerson(name: newName, age: Int(newAge) ?? 0, adress: newAdress)
 
-                let person = Person(name: newName, age: Int(newAge) ?? 0)
+                let person = Person(name: newName, age: Int(newAge) ?? 0, adress: newAdress)
                 // On ajoute a la main la vue que l'on veut dans le path
                 navigationRouter.addToPath(path: Destination.person(person))
                 dismiss.callAsFunction()

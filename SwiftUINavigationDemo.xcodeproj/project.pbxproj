@@ -17,6 +17,8 @@
 		51C99BF8287DD267004E40A0 /* AddPeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C99BF7287DD267004E40A0 /* AddPeopleView.swift */; };
 		51C99BFA287DD81A004E40A0 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C99BF9287DD81A004E40A0 /* NavigationRouter.swift */; };
 		51C99BFC287DD8E6004E40A0 /* CustomPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C99BFB287DD8E6004E40A0 /* CustomPersonView.swift */; };
+		51E20C79287EF5C9003CE0FD /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E20C78287EF5C9003CE0FD /* ArticleListView.swift */; };
+		51E20C7B287EF7A8003CE0FD /* PersonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E20C7A287EF7A8003CE0FD /* PersonListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		51C99BF7287DD267004E40A0 /* AddPeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPeopleView.swift; sourceTree = "<group>"; };
 		51C99BF9287DD81A004E40A0 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		51C99BFB287DD8E6004E40A0 /* CustomPersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPersonView.swift; sourceTree = "<group>"; };
+		51E20C78287EF5C9003CE0FD /* ArticleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListView.swift; sourceTree = "<group>"; };
+		51E20C7A287EF7A8003CE0FD /* PersonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,17 +68,14 @@
 		51C99BE1287DC9F1004E40A0 /* SwiftUINavigationDemo */ = {
 			isa = PBXGroup;
 			children = (
+				51E20C77287EF476003CE0FD /* View */,
+				51E20C76287EF454003CE0FD /* ViewModel */,
+				51E20C75287EF435003CE0FD /* Model */,
 				51C99BF9287DD81A004E40A0 /* NavigationRouter.swift */,
 				51C99BE2287DC9F1004E40A0 /* SwiftUINavigationDemoApp.swift */,
-				51C99BE4287DC9F1004E40A0 /* ContentView.swift */,
 				51C99BE6287DC9F7004E40A0 /* Assets.xcassets */,
 				51C99BE8287DC9F7004E40A0 /* SwiftUINavigationDemo.entitlements */,
 				51C99BE9287DC9F7004E40A0 /* Preview Content */,
-				51C99BF1287DCA0A004E40A0 /* Article.swift */,
-				51C99BF3287DCAE6004E40A0 /* Person.swift */,
-				51C99BF5287DCFFA004E40A0 /* PersonViewModel.swift */,
-				51C99BF7287DD267004E40A0 /* AddPeopleView.swift */,
-				51C99BFB287DD8E6004E40A0 /* CustomPersonView.swift */,
 			);
 			path = SwiftUINavigationDemo;
 			sourceTree = "<group>";
@@ -85,6 +86,35 @@
 				51C99BEA287DC9F7004E40A0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		51E20C75287EF435003CE0FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				51C99BF1287DCA0A004E40A0 /* Article.swift */,
+				51C99BF3287DCAE6004E40A0 /* Person.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		51E20C76287EF454003CE0FD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				51C99BF5287DCFFA004E40A0 /* PersonViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		51E20C77287EF476003CE0FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				51C99BE4287DC9F1004E40A0 /* ContentView.swift */,
+				51C99BF7287DD267004E40A0 /* AddPeopleView.swift */,
+				51C99BFB287DD8E6004E40A0 /* CustomPersonView.swift */,
+				51E20C78287EF5C9003CE0FD /* ArticleListView.swift */,
+				51E20C7A287EF7A8003CE0FD /* PersonListView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51E20C79287EF5C9003CE0FD /* ArticleListView.swift in Sources */,
 				51C99BE5287DC9F1004E40A0 /* ContentView.swift in Sources */,
 				51C99BFA287DD81A004E40A0 /* NavigationRouter.swift in Sources */,
 				51C99BF6287DCFFA004E40A0 /* PersonViewModel.swift in Sources */,
@@ -165,6 +196,7 @@
 				51C99BF2287DCA0A004E40A0 /* Article.swift in Sources */,
 				51C99BFC287DD8E6004E40A0 /* CustomPersonView.swift in Sources */,
 				51C99BF8287DD267004E40A0 /* AddPeopleView.swift in Sources */,
+				51E20C7B287EF7A8003CE0FD /* PersonListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

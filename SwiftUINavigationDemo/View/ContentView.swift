@@ -24,15 +24,7 @@ struct ContentView: View {
                 Section("Article") {
                     ForEach(Article.examples) { article in
                         NavigationLink(value: Destination.article(article)) {
-                            VStack(alignment: .leading) {
-                                HStack {
-                                    Image(systemName: "book.fill")
-                                    Text(article.title)
-                                }
-                                Text(article.author)
-                                    .foregroundColor(.secondary)
-                                    .font(.subheadline)
-                            }
+                            ArticleListView(article: article)
                         }
                     }
                 }
@@ -40,15 +32,7 @@ struct ContentView: View {
                 Section("People") {
                     ForEach(personViewModel.persons) { person in
                         NavigationLink(value: Destination.person(person)) {
-                            VStack(alignment: .leading) {
-                                HStack {
-                                    Image(systemName: "person.fill")
-                                    Text(person.name)
-                                }
-                                Text(person.age, format: .number)
-                                    .foregroundColor(.secondary)
-                                    .font(.subheadline)
-                            }
+                            PersonListView(person: person)
                         }
                     }
                 }

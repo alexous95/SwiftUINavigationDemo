@@ -16,12 +16,12 @@ class PersonViewModel: ObservableObject {
         persons = Person.examples
     }
 
-    func addPerson(name: String, age: Int) {
-        let newPerson = Person(name: name, age: age)
+    func addPerson(name: String, age: Int, adress: String) {
+        let newPerson = Person(name: name, age: age, adress: adress)
         persons.append(newPerson)
     }
 
     func getLastPerson() -> Person {
-        return persons.last ?? Person(name: "Error", age: 0)
+        return persons.last ?? Person(name: "Error", age: 0, adress: "Error")
     }
 }
