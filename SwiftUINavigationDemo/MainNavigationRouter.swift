@@ -1,5 +1,5 @@
 //
-//  NavigationRouter.swift
+//  MainNavigationRouter.swift
 //  SwiftUINavigationDemo
 //
 //  Created by a.b.goncalves on 12/07/2022.
@@ -8,10 +8,14 @@
 import Foundation
 import SwiftUI
 
-class NavigationRouter: ObservableObject {
+class MainNavigationRouter: ObservableObject {
 
     @Published var navigationPath: NavigationPath = NavigationPath()
 
+    @ViewBuilder func displayHomeView() -> some View {
+        ContentView()
+    }
+    
     // Il y a deux moyens de push une vue avec le nouveau systeme de navigation swiftUI
     // Le premier est de creer un router qui va lui même creer et retourner une vue pour le navigationDestination
     // Cela permet d'abstraire la navigation dans une autre classe
@@ -30,6 +34,10 @@ class NavigationRouter: ObservableObject {
                 Text(person.age, format: .number)
             }
         }
+    }
+
+    @ViewBuilder func displayDetailArticleView(article: Article) -> some View {
+        Text(article.title)
     }
 
     func addToPath(path: some Hashable) {

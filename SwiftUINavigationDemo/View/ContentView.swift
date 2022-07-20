@@ -16,8 +16,12 @@ struct ContentView: View {
 
     @State private var showingPeopleSheet = false
     @StateObject private var personViewModel = PersonViewModel()
-    @EnvironmentObject var navigationRouter: NavigationRouter
-    
+    @EnvironmentObject var navigationRouter: MainNavigationRouter
+
+    init() {
+        UINavigationBar.appearance().tintColor = .label
+    }
+
     var body: some View {
         NavigationStack(path: $navigationRouter.navigationPath) {
             List {
@@ -54,12 +58,13 @@ struct ContentView: View {
             .navigationDestination(for: Destination.self) { destination in
                 switch destination {
                 case .article(let article):
-                    Text(article.title)
+                    navigationRouter.displayDetailArticleView(article: article)
 
                 case .person(let person):
                     navigationRouter.displayDetailPersonView(person: person)
                 }
             }
+            .navigationTitle("Home")
         }
         .environmentObject(navigationRouter)
     }
@@ -68,6 +73,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environmentObject(NavigationRouter())
+            .environmentObject(MainNavigationRouter())
     }
 }

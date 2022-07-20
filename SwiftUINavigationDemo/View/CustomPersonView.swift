@@ -11,14 +11,7 @@ struct CustomPersonView: View {
 
     var person: Person
     @Environment(\.dismiss) var dismiss
-    @EnvironmentObject var navigationRouter: NavigationRouter
-
-    var btnBack : some View {
-        Button("Home") {
-            navigationRouter.removeFromPath()
-        }
-        .foregroundColor(.white)
-    }
+    @EnvironmentObject var navigationRouter: MainNavigationRouter
 
     var body: some View {
         ZStack {
@@ -33,8 +26,6 @@ struct CustomPersonView: View {
                     .font(.title2)
             }
         }
-        .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: btnBack)
     }
 }
 

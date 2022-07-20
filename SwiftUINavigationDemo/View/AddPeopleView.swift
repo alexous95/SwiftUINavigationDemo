@@ -13,7 +13,7 @@ struct AddPeopleView: View {
     @State private var newAdress: String = ""
 
     @Environment(\.dismiss) var dismiss
-    @EnvironmentObject var navigationRouter: NavigationRouter
+    @EnvironmentObject var navigationRouter: MainNavigationRouter
     var personViewModel: PersonViewModel
 
     var body: some View {

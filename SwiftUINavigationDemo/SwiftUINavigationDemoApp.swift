@@ -9,11 +9,11 @@ import SwiftUI
 
 @main
 struct SwiftUINavigationDemoApp: App {
-    @ObservedObject var navigationRouter = NavigationRouter()
+    @ObservedObject var navigationRouter = MainNavigationRouter()
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            navigationRouter.displayHomeView()
                 .environmentObject(navigationRouter)
         }
     }
