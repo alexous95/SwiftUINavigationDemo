@@ -47,4 +47,8 @@ class MainNavigationRouter: ObservableObject {
     func removeFromPath() {
         navigationPath = .init()
     }
+
+    func removeLastPath() {
+        navigationPath.removeLast(navigationPath.count)
+    }
 }

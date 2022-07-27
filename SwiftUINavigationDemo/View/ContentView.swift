@@ -14,8 +14,7 @@ enum Destination: Hashable {
 
 struct ContentView: View {
 
-    @State private var showingPeopleSheet = false
-    @StateObject private var personViewModel = PersonViewModel()
+    @State private var selection: Panel? = Panel.article
     @EnvironmentObject var navigationRouter: MainNavigationRouter
 
     init() {
@@ -23,37 +22,11 @@ struct ContentView: View {
     }
 
     var body: some View {
-        NavigationStack(path: $navigationRouter.navigationPath) {
-            List {
-                Section("Article") {
-                    ForEach(Article.examples) { article in
-                        NavigationLink(value: Destination.article(article)) {
-                            ArticleListView(article: article)
-                        }
-                    }
-                }
-
-                Section("People") {
-                    ForEach(personViewModel.persons) { person in
-                        NavigationLink(value: Destination.person(person)) {
-                            PersonListView(person: person)
-                        }
-                    }
-                }
-
-                Section("Add new people") {
-                    Button("Load people") {
-                        personViewModel.loadPersons()
-                    }
-
-                    Button("Add people") {
-                        showingPeopleSheet.toggle()
-                    }
-                    .sheet(isPresented: $showingPeopleSheet){
-                        AddPeopleView(personViewModel: personViewModel)
-                    }
-
-                }
+        NavigationSplitView {
+            SideBar(selection: $selection)
+        } detail: {
+            NavigationStack(path: $navigationRouter.navigationPath) {
+                DetailColumn(selection: $selection)
             }
             .navigationDestination(for: Destination.self) { destination in
                 switch destination {
@@ -64,9 +37,10 @@ struct ContentView: View {
                     navigationRouter.displayDetailPersonView(person: person)
                 }
             }
-            .navigationTitle("Home")
         }
-        .environmentObject(navigationRouter)
+        .onChange(of: selection) { _ in
+            navigationRouter.removeLastPath()
+        }
     }
 }
 

@@ -19,6 +19,10 @@
 		51C99BFC287DD8E6004E40A0 /* CustomPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C99BFB287DD8E6004E40A0 /* CustomPersonView.swift */; };
 		51E20C79287EF5C9003CE0FD /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E20C78287EF5C9003CE0FD /* ArticleListView.swift */; };
 		51E20C7B287EF7A8003CE0FD /* PersonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E20C7A287EF7A8003CE0FD /* PersonListView.swift */; };
+		51E324A3289169750077715C /* SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E324A2289169750077715C /* SideBar.swift */; };
+		51E324A528916E7F0077715C /* DetailColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E324A428916E7F0077715C /* DetailColumn.swift */; };
+		51E324A728916FBA0077715C /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E324A628916FBA0077715C /* ArticleView.swift */; };
+		51E324AB289175E10077715C /* PersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E324AA289175E10077715C /* PersonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		51C99BFB287DD8E6004E40A0 /* CustomPersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPersonView.swift; sourceTree = "<group>"; };
 		51E20C78287EF5C9003CE0FD /* ArticleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListView.swift; sourceTree = "<group>"; };
 		51E20C7A287EF7A8003CE0FD /* PersonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListView.swift; sourceTree = "<group>"; };
+		51E324A2289169750077715C /* SideBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBar.swift; sourceTree = "<group>"; };
+		51E324A428916E7F0077715C /* DetailColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailColumn.swift; sourceTree = "<group>"; };
+		51E324A628916FBA0077715C /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
+		51E324AA289175E10077715C /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,13 +116,33 @@
 		51E20C77287EF476003CE0FD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				51E324A9289174CA0077715C /* Person */,
+				51E324A8289174AD0077715C /* Article */,
 				51C99BE4287DC9F1004E40A0 /* ContentView.swift */,
-				51C99BF7287DD267004E40A0 /* AddPeopleView.swift */,
-				51C99BFB287DD8E6004E40A0 /* CustomPersonView.swift */,
-				51E20C78287EF5C9003CE0FD /* ArticleListView.swift */,
-				51E20C7A287EF7A8003CE0FD /* PersonListView.swift */,
+				51E324A2289169750077715C /* SideBar.swift */,
+				51E324A428916E7F0077715C /* DetailColumn.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		51E324A8289174AD0077715C /* Article */ = {
+			isa = PBXGroup;
+			children = (
+				51E324A628916FBA0077715C /* ArticleView.swift */,
+				51E20C78287EF5C9003CE0FD /* ArticleListView.swift */,
+			);
+			path = Article;
+			sourceTree = "<group>";
+		};
+		51E324A9289174CA0077715C /* Person */ = {
+			isa = PBXGroup;
+			children = (
+				51E20C7A287EF7A8003CE0FD /* PersonListView.swift */,
+				51C99BFB287DD8E6004E40A0 /* CustomPersonView.swift */,
+				51C99BF7287DD267004E40A0 /* AddPeopleView.swift */,
+				51E324AA289175E10077715C /* PersonView.swift */,
+			);
+			path = Person;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,10 +221,14 @@
 				51C99BF6287DCFFA004E40A0 /* PersonViewModel.swift in Sources */,
 				51C99BE3287DC9F1004E40A0 /* SwiftUINavigationDemoApp.swift in Sources */,
 				51C99BF4287DCAE6004E40A0 /* Person.swift in Sources */,
+				51E324A528916E7F0077715C /* DetailColumn.swift in Sources */,
+				51E324A3289169750077715C /* SideBar.swift in Sources */,
 				51C99BF2287DCA0A004E40A0 /* Article.swift in Sources */,
 				51C99BFC287DD8E6004E40A0 /* CustomPersonView.swift in Sources */,
 				51C99BF8287DD267004E40A0 /* AddPeopleView.swift in Sources */,
+				51E324A728916FBA0077715C /* ArticleView.swift in Sources */,
 				51E20C7B287EF7A8003CE0FD /* PersonListView.swift in Sources */,
+				51E324AB289175E10077715C /* PersonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
